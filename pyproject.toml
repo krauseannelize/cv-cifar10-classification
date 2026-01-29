@@ -1,0 +1,15 @@
+[project]
+name = "cv-cifar10-classification"
+version = "0.1.0"
+description = "Image classification of CIFAR-10 dataset using ResNet50, built with Python (TensorFlow, Keras)."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=7.1.0",
+    "jupyterlab>=4.5.3",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.1",
+    "scikit-learn>=1.8.0",
+    "tensorflow>=2.20.0",
+    "tensorflow-metal>=1.2.0",
+]
