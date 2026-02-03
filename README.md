@@ -4,14 +4,14 @@ Transfer learning with ResNet50 to classify CIFAR-10 images into 10 categories, 
 
 ## Tools & Skills Used
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white)
 ![Keras](https://img.shields.io/badge/Keras-D00000?style=flat&logo=keras&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=flat&logo=matplotlib&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat&logo=numpy&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=flat&logo=matplotlib&logoColor=white)
-![Seaborn](https://img.shields.io/badge/Seaborn-3776AB?style=flat&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-3776AB?style=flat&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white)
 ![uv](https://img.shields.io/badge/uv-DE5FE9?style=flat&logo=uv&logoColor=white)
 
 ## Quick Access
@@ -22,7 +22,8 @@ Transfer learning with ResNet50 to classify CIFAR-10 images into 10 categories, 
 
 ### Prerequisites
 
-- [uv](https://docs.astral.sh/uv/getting-started/installation/) installed
+- Python 3.12+
+- [uv](https://docs.astral.sh/uv/getting-started/installation/) package manager
 
 ### 1. Clone the Repository
 
@@ -101,5 +102,3 @@ Given more time and resources, the following improvements could boost performanc
 - **Regularization:** Add dropout layers to the classification head to combat the observed overfitting (~19% train-validation gap)
 - **Learning rate scheduling:** Implement cosine annealing or reduce-on-plateau to optimize convergence
 - **Alternative architectures:** Experiment with models better suited for small images (e.g., EfficientNet-B0, MobileNetV2)
-
----
