@@ -49,6 +49,8 @@ uv run jupyter lab
 
 This project builds a convolutional neural network (CNN) using transfer learning to classify 32×32 RGB images from the CIFAR-10 dataset into 10 categories: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, and truck. The model leverages a pre-trained ResNet50 backbone (trained on ImageNet) with a custom classification head, following a two-phase training approach to balance feature preservation with task-specific adaptation.
 
+![Sample Training Images](visualizations/sample-training-images.png)
+
 ## Objectives
 
 - Implement an end-to-end deep learning pipeline for multi-class image classification
@@ -82,6 +84,12 @@ The project follows a structured approach to transfer learning:
   - automobile ↔ truck
   - cat ↔ dog
   - airplane ↔ ship
+
+### Prediction Samples
+
+![Correct Predictions](visualizations/predictions-correct.png)
+
+![Wrong Predictions](visualizations/predictions-wrong.png)
 
 ## Future Improvements
 
