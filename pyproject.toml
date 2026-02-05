@@ -1,7 +1,7 @@
 [project]
 name = "cv-cifar10-classification"
 version = "0.1.0"
-description = "Image classification of CIFAR-10 dataset using ResNet50, built with Python (TensorFlow, Keras)."
+description = "Transfer learning with ResNet50 to classify CIFAR-10 images into 10 categories, using Python (TensorFlow, Keras)."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
