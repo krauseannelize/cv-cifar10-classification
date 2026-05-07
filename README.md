@@ -2,6 +2,8 @@
 
 Transfer learning with ResNet50 to classify CIFAR-10 images into 10 categories, using Python (TensorFlow, Keras).
 
+📺 [Watch the project walkthrough on YouTube](https://youtu.be/s3YAemA9kLs)
+
 ## Tools & Skills Used
 
 ![Keras](https://img.shields.io/badge/Keras-D00000?style=flat&logo=keras&logoColor=white)
@@ -16,35 +18,13 @@ Transfer learning with ResNet50 to classify CIFAR-10 images into 10 categories, 
 
 ## Quick Access
 
-- [View Notebook](notebooks/cifar10-classification.ipynb)
-
-## Setup & Installation
-
-### Prerequisites
-
-- Python 3.12+
-- [uv](https://docs.astral.sh/uv/getting-started/installation/) package manager
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/krauseannelize/cv-cifar10-classification.git
-cd cv-cifar10-classification
-```
-
-### 2. Install Dependencies
-
-```bash
-uv sync
-```
-
-### 3. Run the Project
-
-```bash
-uv run jupyter lab
-```
-
-📌 **Note:** `uv run` automatically uses the project's virtual environment, no manual activation needed
+- [Project overview](#project-overview) | What the project does and the dataset used
+- [Notebook](notebooks/cifar10-classification.ipynb) | End-to-end pipeline: preprocessing, transfer learning, two-phase training, evaluation
+- [Methodology](#methodology) | Step-by-step workflow from data prep to evaluation
+- [Key findings](#key-findings) | Test accuracy, phase comparison, and class-by-class analysis
+- [Presentation slides (PDF)](presentation-cv-cifar10-classification.pdf) | Project summary deck
+- [Presentation video](https://youtu.be/s3YAemA9kLs) | YouTube walkthrough
+- [Setup & Installation](#setup--installation) | Clone, install, and run
 
 ## Project Overview
 
@@ -63,7 +43,7 @@ This project builds a convolutional neural network (CNN) using transfer learning
 
 The project follows a structured approach to transfer learning:
 
-1. **Data Preparation:** Load CIFAR-10 dataset, limit training samples to 10,000, and normalize pixel values from 0–255 to 0–1 for neural network compatibility.
+1. **Data Preparation:** Load CIFAR-10 dataset, limit training samples to 10,000, and normalize pixel values from 0–255 to 0–1 for stable training and to match the input scale ResNet50 was pre-trained on.
 2. **Model Architecture:** Initialize ResNet50 with ImageNet weights (excluding the top classification layer), add a custom head with GlobalAveragePooling2D → Dense(128, ReLU) → Dense(64, ReLU) → Dense(10, Softmax).
 3. **Phase 1 Training:** Freeze all ResNet50 layers and train only the custom classification head for 10 epochs. This allows the head to learn how to map pre-trained features to CIFAR-10 classes without disrupting learned representations.
 4. **Phase 2 Fine-tuning:** Unfreeze the entire model and continue training for 10 more epochs with a lower learning rate (1e-5). This enables the base model to adapt its features to the smaller CIFAR-10 images.
@@ -102,3 +82,31 @@ Given more time and resources, the following improvements could boost performanc
 - **Regularization:** Add dropout layers to the classification head to combat the observed overfitting (~19% train-validation gap)
 - **Learning rate scheduling:** Implement cosine annealing or reduce-on-plateau to optimize convergence
 - **Alternative architectures:** Experiment with models better suited for small images (e.g., EfficientNet-B0, MobileNetV2)
+
+## Setup & Installation
+
+### Prerequisites
+
+- Python 3.12+
+- [uv](https://docs.astral.sh/uv/getting-started/installation/) package manager
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/krauseannelize/cv-cifar10-classification.git
+cd cv-cifar10-classification
+```
+
+### 2. Install Dependencies
+
+```bash
+uv sync
+```
+
+### 3. Run the Project
+
+```bash
+uv run jupyter lab
+```
+
+📌 **Note:** `uv run` automatically uses the project's virtual environment, no manual activation needed
